@@ -19,3 +19,10 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::get('/stores','StoresController@list');  // Browse Stores List View
+Route::get('/products','ProductsController@list');  // Browse Products List View
+Route::get('/cart','CartController@list');  // Browse Cart Products List View
+Route::get('/search','SearchController@list');  // Search Products List View
+Route::get('/products','ProductsController@view');  // Search Products List View
