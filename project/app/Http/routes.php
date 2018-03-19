@@ -11,18 +11,16 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('home', 'HomeController@index');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-
-
-Route::get('/stores','StoresController@list');  // Browse Stores List View
-Route::get('/products','ProductsController@list');  // Browse Products List View
-Route::get('/cart','CartController@list');  // Browse Cart Products List View
-Route::get('/search','SearchController@list');  // Search Products List View
-Route::get('/products','ProductsController@view');  // Search Products List View
+Route::get('/stores','StoreController@list');  // Browse Stores List View
+Route::get('/products','ProductController@list');  // Browse Products List View
+Route::get('/selections','SelectionController@list');  // Browse Selected Products List View
+Route::get('/address','AddressController@options');  // Browse Address Options List View
+Route::get('/delivery','DeliveryController@options');  // Browse Delivery Options List View
+Route::get('/payment','PaymentController@options');  // Browse Payment Options List View
+Route::get('/confirmation','ConfirmationController@action');  // Confirmation View
+Route::get('/searchall','SearchAllController@listlits');  // Search All List View
+Route::get('/searchstore','SearchStoreController@view');  // Search Store List View
